@@ -1,9 +1,9 @@
 #chi-square
 library("MASS")
 print(str(Cars93))
-Car<-dataFrame(cars93 $ AirBags, Cars93 $ Type)
-Car<-table(cars93 $ AirBags, Cars93 $ Type)
-print(Car)
+car<-data.frame(Cars93$AirBags,Cars93$Type)
+car=table(Cars93$AirBags,Cars93$Type)
+print(car)
 smoothScatter(car)
 print(chisq.test(car))
 
