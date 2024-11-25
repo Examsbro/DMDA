@@ -1,10 +1,11 @@
 #f-test
-install.package("randomForest")
+install.packages("randomForest")
+install.packages("party")
 library(party)
-print(head(reading Skills)
+print(head(readingSkills))
 library(party)
-library(random Forest)
-output.forest<-randomForest(nativeSpeaker ~ agetShoeSize + score, data = readingSkills)
+library(randomForest)
+output.forest<-randomForest(nativeSpeaker ~ age+shoeSize +score,data = readingSkills)
 print(output.forest)
 
 output:
