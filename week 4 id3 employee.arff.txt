@@ -18,7 +18,6 @@ week 4 id3 employee.arff
 
 output:-
 === Run information ===
-
 Scheme:       weka.classifiers.trees.Id3 
 Relation:     employee
 Instances:    11
@@ -27,12 +26,8 @@ Attributes:   3
               Salary
               Performance
 Test mode:    evaluate on training data
-
 === Classifier model (full training set) ===
-
 Id3
-
-
 age = 25: poor
 age = 27: poor
 age = 28: poor
@@ -40,15 +35,10 @@ age = 29: avg
 age = 30: avg
 age = 35: good
 age = 48: good
-
 Time taken to build model: 0 seconds
-
 === Evaluation on training set ===
-
 Time taken to test model on training data: 0 seconds
-
 === Summary ===
-
 Correctly Classified Instances          11              100      %
 Incorrectly Classified Instances         0                0      %
 Kappa statistic                          1     
@@ -57,19 +47,14 @@ Root mean squared error                  0
 Relative absolute error                  0      %
 Root relative squared error              0      %
 Total Number of Instances               11     
-
 === Detailed Accuracy By Class ===
-
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
                  1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     good
                  1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     avg
                  1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     poor
 Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
-
 === Confusion Matrix ===
-
  a b c   <-- classified as
  3 0 0 | a = good
  0 4 0 | b = avg
  0 0 4 | c = poor
-
