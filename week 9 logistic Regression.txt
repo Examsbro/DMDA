@@ -1,65 +1,23 @@
-#logisticREgression
-claimants <-read.csv("C:/Users/midhi/Downloads/claimants.csv")
-sum(is.na(claimants))
-claimants<-na.omit(claimants)
-names(claimants)
-logit<-glm(ATTORNEY~factor(CLMSEX)+factor(CLMINSUR)+factor(SEATBELT)+CLMAGE+LOSS,family="binomial",data=claimants)
-summary(logit)
-logit
-plot(logit)
-prob<-predict(logit,type=c("response"),claimants)
-prob
-confusion<-table(prob>0.5,claimants$ATTORNEY)
-confusion
-Accuracy<-sum(diag(confusion)) / sum(confusion)
-Accuracy
-install.packages("ROCR")
-install.packages("pROC")
-library("ROCR")
-library("pROC")
-rocrped<-prediction(prob,claimants$ATTORNEY)
-rocrpref<-prediction(rocrpred,"tpr","fpr")
-plot(rocrpref,colorize=TRUE,text.adj=c(-0.2,1))
-plot(rorcpref)
-auc<-auc(claimants$ATTORNEY~prob)
-auc
+#logistic regression
+input<-mtcars[,c("mpg","wt","disp","hp")]
+result<-glm(mpg~wt+disp*hp,data=input)
+print(summary(result))
+plot(result)
 
-output
-[1] 290
-[1] "CASENUM"  "ATTORNEY" "CLMSEX"   "CLMINSUR" "SEATBELT" "CLMAGE"   "LOSS"   
+output:-
 Call:
-glm(formula = ATTORNEY ~ factor(CLMSEX) + factor(CLMINSUR) + 
-    factor(SEATBELT) + CLMAGE + LOSS, family = "binomial", data = claimants)
-
+glm(formula = mpg ~ wt + disp * hp, data = input)
 Coefficients:
-                   Estimate Std. Error z value Pr(>|z|)    
-(Intercept)       -0.199978   0.246769  -0.810  0.41772    
-factor(CLMSEX)1    0.432996   0.135706   3.191  0.00142 ** 
-factor(CLMINSUR)1  0.602173   0.231030   2.606  0.00915 ** 
-factor(SEATBELT)1 -0.781079   0.566125  -1.380  0.16768    
-CLMAGE             0.006487   0.003324   1.952  0.05097 .  
-LOSS              -0.385044   0.034845 -11.050  < 2e-16 ***
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  4.447e+01  2.699e+00  16.477 1.30e-15 ***
+wt          -3.433e+00  8.977e-01  -3.824 0.000703 ***
+disp        -4.219e-02  1.434e-02  -2.941 0.006634 ** 
+hp          -9.575e-02  2.030e-02  -4.716 6.53e-05 ***
+disp:hp      2.589e-04  7.177e-05   3.607 0.001239 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 1516.1  on 1095  degrees of freedom
-Residual deviance: 1287.8  on 1090  degrees of freedom
-AIC: 1299.8
-
-Number of Fisher Scoring iterations: 6
-
-> logit
-
-Call:  glm(formula = ATTORNEY ~ factor(CLMSEX) + factor(CLMINSUR) + 
-    factor(SEATBELT) + CLMAGE + LOSS, family = "binomial", data = claimants)
-
-Coefficients:
-      (Intercept)    factor(CLMSEX)1  factor(CLMINSUR)1  factor(SEATBELT)1             CLMAGE               LOSS  
-        -0.199978           0.432996           0.602173          -0.781079           0.006487          -0.385044  
-
-Degrees of Freedom: 1095 Total (i.e. Null);  1090 Residual
-Null Deviance:	    1516 
-Residual Deviance: 1288 	AIC: 1300
-[1] 0.705292
+(Dispersion parameter for gaussian family taken to be 4.873369)
+    Null deviance: 1126.05  on 31  degrees of freedom
+Residual deviance:  131.58  on 27  degrees of freedom
+AIC: 148.06
+Number of Fisher Scoring iterations: 2
