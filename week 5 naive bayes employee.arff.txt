@@ -1,5 +1,4 @@
 week 5 naive bayes employee.arff
-
 @relation employee
 @attribute age{25,27,28,29,30,35,48}
 @attribute Salary{10k,15k,17k,20k,25k,30k,35k,32k}
@@ -16,10 +15,8 @@ week 5 naive bayes employee.arff
 35,32k,good
 48,35k,good
 48,32k,good
-
 output:-
 === Run information ===
-
 Scheme:       weka.classifiers.bayes.NaiveBayes 
 Relation:     employee
 Instances:    11
@@ -28,11 +25,8 @@ Attributes:   3
               Salary
               Performance
 Test mode:    evaluate on training data
-
 === Classifier model (full training set) ===
-
 Naive Bayes Classifier
-
                 Class
 Attribute        good    avg   poor
                (0.29) (0.36) (0.36)
@@ -46,7 +40,6 @@ age
   35               2.0    1.0    1.0
   48               3.0    1.0    1.0
   [total]         10.0   11.0   11.0
-
 Salary
   10k              1.0    1.0    2.0
   15k              1.0    1.0    2.0
@@ -57,17 +50,10 @@ Salary
   35k              2.0    1.0    1.0
   32k              3.0    1.0    1.0
   [total]         11.0   12.0   12.0
-
-
-
 Time taken to build model: 0 seconds
-
 === Evaluation on training set ===
-
 Time taken to test model on training data: 0 seconds
-
 === Summary ===
-
 Correctly Classified Instances          11              100      %
 Incorrectly Classified Instances         0                0      %
 Kappa statistic                          1     
@@ -76,7 +62,6 @@ Root mean squared error                  0.1592
 Relative absolute error                 33.2008 %
 Root relative squared error             33.9044 %
 Total Number of Instances               11     
-
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -84,9 +69,7 @@ Total Number of Instances               11
                  1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     avg
                  1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     poor
 Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
-
 === Confusion Matrix ===
-
  a b c   <-- classified as
  3 0 0 | a = good
  0 4 0 | b = avg
