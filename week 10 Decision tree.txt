@@ -15,6 +15,10 @@ a<-table(testing$Species,pred)
 sum(diag(a))/sum(a)
 plot(model)
 
+#png(file="model.png")
+#plot(model)
+#dev.off()
+
 OUTPUT:-
 Class specified by attribute `outcome'
 Read 105 cases (5 attributes) from undefined.data
