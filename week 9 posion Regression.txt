@@ -8,8 +8,6 @@ print(summary(output))
 plot(output)
 
 output:-
-> input<- warpbreaks
-> print(head(input))
   breaks wool tension
 1     26    A       L
 2     30    A       L
@@ -17,10 +15,6 @@ output:-
 4     25    A       L
 5     70    A       L
 6     52    A       L
-> plot(input)
-> output<-glm(formula = breaks~wool+tension,data =input,family = poisson)
-> print(summary(output))
-Call:
 glm(formula = breaks ~ wool + tension, family = poisson, data = input)
 Coefficients:
             Estimate Std. Error
@@ -38,9 +32,7 @@ Signif. codes:
   0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05
   ‘.’ 0.1 ‘ ’ 1
 (Dispersion parameter for poisson family taken to be 1)
-
     Null deviance: 297.37  on 53  degrees of freedom
 Residual deviance: 210.39  on 50  degrees of freedom
 AIC: 493.06
-
 Number of Fisher Scoring iterations: 4
