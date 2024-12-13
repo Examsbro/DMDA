@@ -1,4 +1,4 @@
-#posion Regression
+#poisson Regression
 #warpbreaks
 input<- warpbreaks
 print(head(input))
